@@ -7,24 +7,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="akirakozov.ru.smartjumper.MainActivity">
+    tools:context=".EditorActivity">
+
+    <akirakozov.ru.smartjumper.drawing.SwampEditorView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/swampEditorView"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/saveSwampButton" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Start game"
-        android:id="@+id/button"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="67dp"
-        android:onClick="sendStartMessage" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="edit"
-        android:id="@+id/button3"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:onClick="sendStartEditorMessage" />
+        android:text="save"
+        android:id="@+id/saveSwampButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

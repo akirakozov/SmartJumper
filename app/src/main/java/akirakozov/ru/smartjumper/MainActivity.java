@@ -10,12 +10,16 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(new DrawingView(this));
         setContentView(R.layout.activity_main);
     }
 
     public void sendStartMessage(View view) {
         Intent intent = new Intent(MainActivity.this, PlaySceneActivity.class);
+        startActivity(intent);
+    }
+
+    public void sendStartEditorMessage(View view) {
+        Intent intent = new Intent(MainActivity.this, EditorActivity.class);
         startActivity(intent);
     }
 }

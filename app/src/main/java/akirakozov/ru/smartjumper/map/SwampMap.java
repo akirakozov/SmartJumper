@@ -1,7 +1,6 @@
 package akirakozov.ru.smartjumper.map;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -46,6 +45,10 @@ public class SwampMap {
             );
         }
         return infos;
+    }
+
+    public Map<Integer, LeafState> getLeafStates() {
+        return leafStates;
     }
 
     public void recalcPoints(Point startLeaf, int stepX, int stepY) {
@@ -141,6 +144,15 @@ public class SwampMap {
             leafStates.remove(activeLeafNumber);
         }
     }
+
+    public void changeLeafState(int leafNum, LeafState newState) {
+        if (newState != LeafState.EMPTY) {
+            leafStates.put(leafNum, newState);
+        } else {
+            leafStates.remove(leafNum);
+        }
+    }
+
     private boolean isPointInsideLeaf(Point leaf, Point p) {
         return leaf.x - FROG_RADIUS <= p.x && p.x <= leaf.x + FROG_RADIUS
                 && leaf.y - FROG_RADIUS <= p.y && p.y <= leaf.y + FROG_RADIUS;
